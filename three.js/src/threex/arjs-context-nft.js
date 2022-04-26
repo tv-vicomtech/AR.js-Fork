@@ -25,8 +25,8 @@ const Context = function (parameters, sourceParameters) {
         // tune the maximum rate of pose detection in the source image
         maxDetectionRate: 60,
         // resolution of at which we detect pose in the source image
-        canvasWidth: 640,
-        canvasHeight: 480,
+        canvasWidth: 1280,
+        canvasHeight: 960,
 
         // the patternRatio inside the artoolkit marker - artoolkit only
         patternRatio: 0.5,
