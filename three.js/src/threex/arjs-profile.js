@@ -67,23 +67,23 @@ Profile.prototype.performance = function (label) {
   }
 
   if (label === "desktop-fast") {
-    this.contextParameters.canvasWidth = 1280 * 3;
-    this.contextParameters.canvasHeight = 960 * 3;
+    this.contextParameters.canvasWidth = window.innerWidth * 3;
+    this.contextParameters.canvasHeight = window.innerHeight * 3;
 
     this.contextParameters.maxDetectionRate = 30;
   } else if (label === "desktop-normal") {
-    this.contextParameters.canvasWidth = 1280;
-    this.contextParameters.canvasHeight = 960;
+    this.contextParameters.canvasWidth = window.innerWidth;
+    this.contextParameters.canvasHeight = window.innerHeight;
 
     this.contextParameters.maxDetectionRate = 60;
   } else if (label === "phone-normal") {
-    this.contextParameters.canvasWidth = 960 * 4;
-    this.contextParameters.canvasHeight = 1280 * 4;
+    this.contextParameters.canvasWidth = window.innerWidth * 4;
+    this.contextParameters.canvasHeight = window.innerHeight * 4;
 
     this.contextParameters.maxDetectionRate = 30;
   } else if (label === "phone-slow") {
-    this.contextParameters.canvasWidth = 960 * 3;
-    this.contextParameters.canvasHeight = 1280 * 3;
+    this.contextParameters.canvasWidth = window.innerWidth * 3;
+    this.contextParameters.canvasHeight = window.innerHeight * 3;
 
     this.contextParameters.maxDetectionRate = 30;
   } else {
