@@ -77,13 +77,13 @@ Profile.prototype.performance = function (label) {
 
     this.contextParameters.maxDetectionRate = 60;
   } else if (label === "phone-normal") {
-    this.contextParameters.canvasWidth = window.innerWidth * 4;
-    this.contextParameters.canvasHeight = window.innerHeight * 4;
+    this.contextParameters.canvasWidth = window.innerWidth * 10;
+    this.contextParameters.canvasHeight = window.innerHeight * 10;
 
     this.contextParameters.maxDetectionRate = 30;
   } else if (label === "phone-slow") {
-    this.contextParameters.canvasWidth = window.innerWidth * 3;
-    this.contextParameters.canvasHeight = window.innerHeight * 3;
+    this.contextParameters.canvasWidth = window.innerWidth * 10;
+    this.contextParameters.canvasHeight = window.innerHeight * 10;
 
     this.contextParameters.maxDetectionRate = 30;
   } else {
