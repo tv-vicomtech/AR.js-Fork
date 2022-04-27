@@ -15,12 +15,12 @@ const Source = function (parameters) {
     deviceId: null,
 
     // resolution of at which we initialize in the source image
-    sourceWidth: window.innerWidth / 2,
-    sourceHeight: window.innerHeight / 2,
+    sourceWidth: 1280,
+    sourceHeight: 960,
 
     // resolution displayed for the source
-    displayWidth: window.innerWidth / 2,
-    displayHeight: window.innerHeight / 2,
+    displayWidth: 1280,
+    displayHeight: 960,
   };
   //////////////////////////////////////////////////////////////////////////////
   //		setParameters
