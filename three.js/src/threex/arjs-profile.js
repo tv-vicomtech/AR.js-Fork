@@ -65,7 +65,7 @@ Profile.prototype.performance = function (label) {
   if (label === "default") {
     label = this._guessPerformanceLabel();
   }
-  console.log(label);
+  console.info(label);
 
   if (label === "desktop-fast") {
     this.contextParameters.canvasWidth = window.innerWidth * 3;

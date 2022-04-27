@@ -29,7 +29,7 @@ const Context = function (parameters) {
     canvasHeight: 960,
 
     // the patternRatio inside the artoolkit marker - artoolkit only
-    patternRatio: 0.5,
+    patternRatio: 0.75,
 
     // Labeling mode for markers - ['black_region', 'white_region']
     // black_region: Black bordered markers on a white background, white_region: White bordered markers on a black background
