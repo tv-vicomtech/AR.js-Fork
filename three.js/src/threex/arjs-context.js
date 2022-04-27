@@ -23,7 +23,7 @@ const Context = function (parameters) {
     cameraParametersUrl: Context.baseURL + "../data/data/camera_para.dat",
 
     // tune the maximum rate of pose detection in the source image
-    maxDetectionRate: 30,
+    maxDetectionRate: 60,
     // resolution of at which we detect pose in the source image
     canvasWidth: 1280,
     canvasHeight: 960,
