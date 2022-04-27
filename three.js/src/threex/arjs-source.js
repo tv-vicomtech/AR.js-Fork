@@ -22,6 +22,7 @@ const Source = function (parameters) {
     displayWidth: 1280,
     displayHeight: 960,
   };
+
   //////////////////////////////////////////////////////////////////////////////
   //		setParameters
   //////////////////////////////////////////////////////////////////////////////
@@ -469,6 +470,7 @@ Source.prototype.onResizeElement = function () {
     this.domElement.style.marginLeft = "0px";
   }
 };
+
 /*
 Source.prototype.copyElementSizeTo = function(otherElement){
 	otherElement.style.width = this.domElement.style.width

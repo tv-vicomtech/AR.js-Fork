@@ -29,7 +29,7 @@ const Context = function (parameters) {
     canvasHeight: 960,
 
     // the patternRatio inside the artoolkit marker - artoolkit only
-    patternRatio: 0.75,
+    patternRatio: 0.5,
 
     // Labeling mode for markers - ['black_region', 'white_region']
     // black_region: Black bordered markers on a white background, white_region: White bordered markers on a black background
@@ -288,6 +288,7 @@ Context.prototype._initArtoolkit = function (onCompleted) {
       "4x4_BCH_13_9_3": arController.artoolkit.AR_MATRIX_CODE_4x4_BCH_13_9_3,
       "4x4_BCH_13_5_5": arController.artoolkit.AR_MATRIX_CODE_4x4_BCH_13_5_5,
     };
+
     var matrixCodeType = matrixCodeTypes[_this.parameters.matrixCodeType];
     console.assert(matrixCodeType !== undefined);
     arController.setMatrixCodeType(matrixCodeType);
