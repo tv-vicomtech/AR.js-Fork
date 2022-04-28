@@ -16,13 +16,11 @@ const Source = function (parameters) {
 
     // resolution of at which we initialize in the source image
     sourceWidth: 1280,
-    sourceHeight: 960,
-
+    sourceHeight: 860,
     // resolution displayed for the source
     displayWidth: 1280,
-    displayHeight: 960,
+    displayHeight: 860,
   };
-
   //////////////////////////////////////////////////////////////////////////////
   //		setParameters
   //////////////////////////////////////////////////////////////////////////////
@@ -470,7 +468,6 @@ Source.prototype.onResizeElement = function () {
     this.domElement.style.marginLeft = "0px";
   }
 };
-
 /*
 Source.prototype.copyElementSizeTo = function(otherElement){
 	otherElement.style.width = this.domElement.style.width

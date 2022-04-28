@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import ArMarkerControls from "threexArmarkercontrols"; // Alias for dynamic importing
+import ArMarkerControls from "./arjs-markercontrols";
 import jsartoolkit from "jsartoolkit"; // TODO comment explanation
 const { ARController } = jsartoolkit;
 
@@ -25,8 +25,8 @@ const Context = function (parameters) {
     // tune the maximum rate of pose detection in the source image
     maxDetectionRate: 60,
     // resolution of at which we detect pose in the source image
-    canvasWidth: 1280,
-    canvasHeight: 960,
+    canvasWidth: 640,
+    canvasHeight: 480,
 
     // the patternRatio inside the artoolkit marker - artoolkit only
     patternRatio: 0.5,
@@ -39,7 +39,6 @@ const Context = function (parameters) {
     // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingEnabled
     imageSmoothingEnabled: false,
   };
-
   // parameters sanity check
   console.assert(
     ["artoolkit"].indexOf(this.parameters.trackingBackend) !== -1,
@@ -104,7 +103,7 @@ Context.prototype.removeEventListener =
 
 // default to github page
 Context.baseURL = "https://ar-js-org.github.io/AR.js/three.js/";
-Context.REVISION = "3.4.0-alpha-rc1";
+Context.REVISION = "3.4.0-alpha-rc2";
 /**
  * Create a default camera for this trackingBackend
  * @param {string} trackingBackend - the tracking to user
@@ -168,7 +167,9 @@ Context.prototype.update = function (srcElement) {
     if (markerControls.object3d.visible) {
       prevVisibleMarkers.push(markerControls);
     }
-    markerControls.object3d.visible = false;
+    if (!markerControls.context.arController.showObject) {
+      markerControls.object3d.visible = false;
+    }
   });
 
   // process this frame
@@ -289,7 +290,6 @@ Context.prototype._initArtoolkit = function (onCompleted) {
       "4x4_BCH_13_9_3": arController.artoolkit.AR_MATRIX_CODE_4x4_BCH_13_9_3,
       "4x4_BCH_13_5_5": arController.artoolkit.AR_MATRIX_CODE_4x4_BCH_13_5_5,
     };
-
     var matrixCodeType = matrixCodeTypes[_this.parameters.matrixCodeType];
     console.assert(matrixCodeType !== undefined);
     arController.setMatrixCodeType(matrixCodeType);
@@ -322,7 +322,7 @@ Context.prototype._initArtoolkit = function (onCompleted) {
 /**
  * return the projection matrix
  */
-Context.prototype.getProjectionMatrix = function (srcElement) {
+Context.prototype.getProjectionMatrix = function () {
   // FIXME rename this function to say it is artoolkit specific - getArtoolkitProjectMatrix
   // keep a backward compatibility with a console.warn
 
@@ -331,10 +331,12 @@ Context.prototype.getProjectionMatrix = function (srcElement) {
     this.arController,
     "arController MUST be initialized to call this function"
   );
+
   // get projectionMatrixArr from artoolkit
   var projectionMatrixArr = this.arController.getCameraMatrix();
   var projectionMatrix = new THREE.Matrix4().fromArray(projectionMatrixArr);
 
+  // projectionMatrix.multiply(this._artoolkitProjectionAxisTransformMatrix)
   // return the result
   return projectionMatrix;
 };

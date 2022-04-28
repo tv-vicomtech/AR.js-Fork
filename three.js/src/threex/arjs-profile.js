@@ -65,26 +65,25 @@ Profile.prototype.performance = function (label) {
   if (label === "default") {
     label = this._guessPerformanceLabel();
   }
-  console.info(label);
 
   if (label === "desktop-fast") {
-    this.contextParameters.canvasWidth = window.innerWidth * 3;
-    this.contextParameters.canvasHeight = window.innerHeight * 3;
+    this.contextParameters.canvasWidth = 640 * 3;
+    this.contextParameters.canvasHeight = 480 * 3;
 
     this.contextParameters.maxDetectionRate = 30;
   } else if (label === "desktop-normal") {
-    this.contextParameters.canvasWidth = window.innerWidth;
-    this.contextParameters.canvasHeight = window.innerHeight;
+    this.contextParameters.canvasWidth = 640;
+    this.contextParameters.canvasHeight = 480;
 
     this.contextParameters.maxDetectionRate = 60;
   } else if (label === "phone-normal") {
-    this.contextParameters.canvasWidth = window.innerWidth * 3;
-    this.contextParameters.canvasHeight = window.innerHeight * 3;
+    this.contextParameters.canvasWidth = 80 * 4;
+    this.contextParameters.canvasHeight = 60 * 4;
 
     this.contextParameters.maxDetectionRate = 30;
   } else if (label === "phone-slow") {
-    this.contextParameters.canvasWidth = window.innerWidth * 3;
-    this.contextParameters.canvasHeight = window.innerHeight * 3;
+    this.contextParameters.canvasWidth = 80 * 3;
+    this.contextParameters.canvasHeight = 60 * 3;
 
     this.contextParameters.maxDetectionRate = 30;
   } else {
