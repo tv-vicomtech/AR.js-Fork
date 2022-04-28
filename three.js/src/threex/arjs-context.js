@@ -39,6 +39,7 @@ const Context = function (parameters) {
     // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingEnabled
     imageSmoothingEnabled: false,
   };
+
   // parameters sanity check
   console.assert(
     ["artoolkit"].indexOf(this.parameters.trackingBackend) !== -1,
