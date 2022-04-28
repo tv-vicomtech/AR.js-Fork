@@ -442,10 +442,17 @@ Source.prototype.onResizeElement = function () {
     console.assert(false);
   }
 
-  // compute sourceAspect
-  var sourceAspect = sourceWidth / sourceHeight;
-  // compute screenAspect
-  var screenAspect = screenWidth / screenHeight;
+  if (window.innerHeight > window.innerWidth) {
+    // compute sourceAspect
+    var sourceAspect = sourceHeight / sourceWidth;
+    // compute screenAspect
+    var screenAspect = screenHeight / screenWidth;
+  } else {
+    // compute sourceAspect
+    var sourceAspect = sourceWidth / sourceHeight;
+    // compute screenAspect
+    var screenAspect = screenWidth / screenHeight;
+  }
 
   // if screenAspect < sourceAspect, then change the width, else change the height
   if (screenAspect < sourceAspect) {
