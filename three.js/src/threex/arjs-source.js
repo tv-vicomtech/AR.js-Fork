@@ -18,8 +18,8 @@ const Source = function (parameters) {
     sourceWidth: 1280,
     sourceHeight: 860,
     // resolution displayed for the source
-    displayWidth: 1280,
-    displayHeight: 860,
+    displayWidth: window.innerWidth,
+    displayHeight: window.innerHeight,
   };
   //////////////////////////////////////////////////////////////////////////////
   //		setParameters
