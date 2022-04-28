@@ -71,7 +71,7 @@ Profile.prototype.performance = function (label) {
     this.contextParameters.canvasWidth = window.innerWidth * 3;
     this.contextParameters.canvasHeight = window.innerHeight * 3;
 
-    this.contextParameters.maxDetectionRate = 60;
+    this.contextParameters.maxDetectionRate = 30;
   } else if (label === "desktop-normal") {
     this.contextParameters.canvasWidth = window.innerWidth;
     this.contextParameters.canvasHeight = window.innerHeight;
@@ -81,12 +81,12 @@ Profile.prototype.performance = function (label) {
     this.contextParameters.canvasWidth = window.innerWidth * 3;
     this.contextParameters.canvasHeight = window.innerHeight * 3;
 
-    this.contextParameters.maxDetectionRate = 60;
+    this.contextParameters.maxDetectionRate = 30;
   } else if (label === "phone-slow") {
     this.contextParameters.canvasWidth = window.innerWidth * 3;
     this.contextParameters.canvasHeight = window.innerHeight * 3;
 
-    this.contextParameters.maxDetectionRate = 60;
+    this.contextParameters.maxDetectionRate = 30;
   } else {
     console.assert(false, "unknonwn label " + label);
   }

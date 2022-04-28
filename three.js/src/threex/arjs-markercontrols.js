@@ -22,7 +22,7 @@ const MarkerControls = function (context, object3d, parameters) {
     // change matrix mode - [modelViewMatrix, cameraTransformMatrix]
     changeMatrixMode: "modelViewMatrix",
     // minimal confidence in the marke recognition - between [0, 1] - default to 1
-    minConfidence: 0.5,
+    minConfidence: 0.6,
     // turn on/off camera smoothing
     smooth: false,
     // number of matrices to smooth tracking over, more = smoother but slower follow
